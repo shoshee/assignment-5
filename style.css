@@ -1,6 +1,6 @@
 
 body{
-    background-color: blanchedalmond;
+    background-color:whitesmoke;
     color: #131212;
     background-repeat: no-repeat;
     background-size: 100%;
@@ -9,15 +9,18 @@ body{
 
 .form-control{
     position: relative;
-    background-color:rgba(92, 89, 89, 0.2);
+    background-color:rgba(71, 70, 70, 0.2);
     padding: 22px;
     border: none;
     border-radius: 25px;
+    
 }
 
 .btn{
     border-radius: 1.5rem;
     padding: 15px 30px;
+    font-weight: 700;
+    background-color: yellowgreen;
 }
 .search-bar{
     display: flex;
