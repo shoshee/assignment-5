@@ -1,3 +1,5 @@
+// searching for meal list 
+
 const searchMeals = () => {
     const searchText = document.getElementById('search-field').value
     // console.log(searchText); 
@@ -11,28 +13,23 @@ const searchMeals = () => {
     //         alert("Invalid Meal Name. Please put a valid meal name.");
     //     })
 
-    
-        if(searchText===''){
-            alert("Please type your desire meal first.And give your eyes ease.");
-            
-        }
-        else{
-            fetch(url)
-        .then(response => response.json())
-        .then(data => displayMeals(data.meals))
+    if (searchText === '') {
+        alert("Please type your desire meal first.And give your eyes ease.");
 
-        .catch((error) => {
-            alert("Invalid Meal Name. Please put a valid meal name.");
-        })
+    }
+    else {
+        fetch(url)
+            .then(response => response.json())
+            .then(data => displayMeals(data.meals))
 
-        }
-        
-        
-       
+            .catch((error) => {
+                alert("We don't have such named meal for now. Please check spelling");
+            })
 
+    }
 
 }
-
+// displaying meal list
 const displayMeals = meals => {
     // console.log(meals)
     const mealContainer = document.getElementById('meal-container');
@@ -48,13 +45,14 @@ const displayMeals = meals => {
         </div>
     `
 
-
         mealDiv.innerHTML = mealInfo;
         mealContainer.appendChild(mealDiv);
 
     });
 
 }
+
+
 
 const displayMealDetail = mealName => {
     const url = `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${mealName}`
@@ -63,10 +61,10 @@ const displayMealDetail = mealName => {
         .then(data => renderMealInfo(data.meals));
 }
 
-const renderMealInfo = mealItems => {
+//  ingredients of each meal
+const renderMealInfo = ingredientItems => {
 
-
-    mealItems.forEach(meal => {
+    ingredientItems.forEach(meal => {
         const mealDetail = document.getElementById("meal-details")
         mealDetail.innerHTML = `
         <img src="${meal.strMealThumb}">

@@ -1,16 +1,11 @@
 
-
 body{
-    background-color:rgb(247, 250, 232);
+    background-color: blanchedalmond;
     color: #131212;
     background-repeat: no-repeat;
     background-size: 100%;
     background-position: top;
 }
-.search-box{
-    position: relative;
-}
-
 
 .form-control{
     position: relative;
@@ -22,7 +17,7 @@ body{
 
 .btn{
     border-radius: 1.5rem;
-    padding: 9px 20px;
+    padding: 15px 30px;
 }
 .search-bar{
     display: flex;
@@ -46,11 +41,9 @@ body{
 #meal-container{
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-gap: 15px;
-   
-
-
+    grid-gap: 15px;  
 }
+
 .meal img{
     width: 250px;
     border-radius: 10px;
